@@ -6,6 +6,14 @@ public class Main {
         new Main().appendMain();
         new Main().addMain();
         new Main().insertMain();
+        new Main().popMain();
+    }
+
+    public void popMain() {
+        System.out.println("\nDeletion by pop method");
+        addMain();
+        integerMyLinkedList.pop();
+        integerMyLinkedList.printMyNodes();
     }
 
     public void insertMain() {
