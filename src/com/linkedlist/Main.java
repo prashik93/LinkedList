@@ -7,12 +7,37 @@ public class Main {
         new Main().addMain();
         new Main().insertMain();
         new Main().popMain();
-        boolean search = new Main().searchMain();
-        System.out.println("Search result : " + search);
+        new Main().searchMain();
+        new Main().insertAfterGivenElementMain();
     }
 
-    public boolean searchMain() {
-        System.out.println("\nAdding : ");
+    public void insertAfterGivenElementMain() {
+        System.out.println("\nSearch and insert");
+        MyNode<Integer> myFirstNode = new MyNode<>();
+        myFirstNode.setKey(70);
+
+        MyNode<Integer> mySecondNode = new MyNode<>();
+        mySecondNode.setKey(30);
+
+        MyNode<Integer> myThirdNode = new MyNode<>();
+        myThirdNode.setKey(56);
+
+        MyNode<Integer> myFourthNode = new MyNode<>();
+        myFourthNode.setKey(40);
+
+        integerMyLinkedList.add(myFirstNode);
+        integerMyLinkedList.add(mySecondNode);
+        integerMyLinkedList.add(myThirdNode);
+
+        INode<Integer> search = integerMyLinkedList.search(mySecondNode);
+
+        integerMyLinkedList.insert(search, myFourthNode);
+        integerMyLinkedList.printMyNodes();
+    }
+
+
+    public INode<Integer> searchMain() {
+        System.out.println("\nSearching Node : ");
         MyNode<Integer> myFirstNode = new MyNode<>();
         myFirstNode.setKey(70);
 

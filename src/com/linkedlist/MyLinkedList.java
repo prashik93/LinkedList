@@ -8,19 +8,23 @@ public class MyLinkedList<K> {
 
     }
 
-    public boolean search(INode<K> myNode) {
+    public void insertAfterGivenElement(INode<K> myNode, INode<K> newNode) {
+
+    }
+
+    public INode<K> search(INode<K> myNode) {
         if(this.head != null) {
             INode<K> tempNode = this.head;
             while (tempNode.getNext() != null) {
                 if ((tempNode.getNext() == myNode) || (this.head == myNode)) {
                     System.out.println("Found : " + tempNode.getNext());
-                    return true;
+                    return tempNode.getNext();
                 }
                 tempNode = tempNode.getNext();
             }
         }
         System.out.println("Not found");
-        return false;
+        return null;
     }
 
     public INode<K> pop() {
