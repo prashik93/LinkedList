@@ -1,9 +1,32 @@
 package com.linkedlist;
 public class Main {
+    MyLinkedList<Integer> integerMyLinkedList = new MyLinkedList<>();
     public static void main(String[] args) {
         System.out.println("Welcome to Linked List !");
-        MyLinkedList<Integer> integerMyLinkedList = new MyLinkedList<>();
+        new Main().appendMain();
+        new Main().addMain();
+    }
 
+    public void appendMain() {
+        System.out.println("Appending : ");
+        MyNode<Integer> myFirstNode = new MyNode<>();
+        myFirstNode.setKey(56);
+
+        MyNode<Integer> mySecondNode = new MyNode<>();
+        mySecondNode.setKey(30);
+
+        MyNode<Integer> myThirdNode = new MyNode<>();
+        myThirdNode.setKey(70);
+
+        integerMyLinkedList.append(myFirstNode);
+        integerMyLinkedList.append(mySecondNode);
+        integerMyLinkedList.append(myThirdNode);
+
+        integerMyLinkedList.printMyNodes();
+    }
+
+    public void addMain() {
+        System.out.println("Adding : ");
         MyNode<Integer> myFirstNode = new MyNode<>();
         myFirstNode.setKey(70);
 
