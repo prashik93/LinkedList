@@ -8,6 +8,12 @@ public class MyLinkedList<K> {
 
     }
 
+    public void insert(INode<K> myNode, INode<K> newNode) {
+        INode<K> tempNode = myNode.getNext();
+        myNode.setNext(newNode);
+        newNode.setNext(tempNode);
+    }
+
     public void append(INode<K> newNode) {
         if(this.head == null) {
             this.head = newNode;

@@ -5,10 +5,28 @@ public class Main {
         System.out.println("Welcome to Linked List !");
         new Main().appendMain();
         new Main().addMain();
+        new Main().insertMain();
     }
 
+    public void insertMain() {
+        System.out.println("\nInsertion in between 56 & 70");
+        MyNode<Integer> myFirstNode = new MyNode<>();
+        myFirstNode.setKey(56);
+
+        MyNode<Integer> mySecondNode = new MyNode<>();
+        mySecondNode.setKey(30);
+
+        MyNode<Integer> myThirdNode = new MyNode<>();
+        myThirdNode.setKey(70);
+
+        integerMyLinkedList.append(myFirstNode);
+        integerMyLinkedList.append(myThirdNode);
+        integerMyLinkedList.insert(myFirstNode, mySecondNode);
+
+        integerMyLinkedList.printMyNodes();
+    }
     public void appendMain() {
-        System.out.println("Appending : ");
+        System.out.println("\nAppending : ");
         MyNode<Integer> myFirstNode = new MyNode<>();
         myFirstNode.setKey(56);
 
@@ -26,7 +44,7 @@ public class Main {
     }
 
     public void addMain() {
-        System.out.println("Adding : ");
+        System.out.println("\nAdding : ");
         MyNode<Integer> myFirstNode = new MyNode<>();
         myFirstNode.setKey(70);
 
