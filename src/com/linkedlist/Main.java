@@ -7,7 +7,15 @@ public class Main {
         MyNode<Integer> myFirstNode = new MyNode<>();
         myFirstNode.setKey(70);
 
+        MyNode<Integer> mySecondNode = new MyNode<>();
+        mySecondNode.setKey(30);
+
+        MyNode<Integer> myThirdNode = new MyNode<>();
+        myThirdNode.setKey(56);
+
         integerMyLinkedList.add(myFirstNode);
+        integerMyLinkedList.add(mySecondNode);
+        integerMyLinkedList.add(myThirdNode);
 
         integerMyLinkedList.printMyNodes();
     }

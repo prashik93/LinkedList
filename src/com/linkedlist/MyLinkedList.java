@@ -22,14 +22,14 @@ public class MyLinkedList<K> {
     }
 
     public void printMyNodes() {
-        System.out.println("MyNodes : " + head);
-    }
-
-    @Override
-    public String toString() {
-        return "MyLinkedList{" +
-                "head=" + head +
-                ", tail=" + tail +
-                '}';
+        StringBuffer myNodes = new StringBuffer(("My Nodes : "));
+        INode<K> tempNode = head;
+        while(tempNode.getNext() != null) {
+            myNodes.append(tempNode.getKey());
+            if(!tempNode.equals(tail)) myNodes.append("->");
+            tempNode = tempNode.getNext();
+        }
+        myNodes.append(tempNode.getKey());
+        System.out.println(myNodes);
     }
 }
