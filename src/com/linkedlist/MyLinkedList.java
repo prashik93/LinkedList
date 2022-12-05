@@ -8,6 +8,21 @@ public class MyLinkedList<K> {
 
     }
 
+    public boolean search(INode<K> myNode) {
+        if(this.head != null) {
+            INode<K> tempNode = this.head;
+            while (tempNode.getNext() != null) {
+                if ((tempNode.getNext() == myNode) || (this.head == myNode)) {
+                    System.out.println("Found : " + tempNode.getNext());
+                    return true;
+                }
+                tempNode = tempNode.getNext();
+            }
+        }
+        System.out.println("Not found");
+        return false;
+    }
+
     public INode<K> pop() {
         INode<K> tempNode = this.head;
         this.head = head.getNext();
@@ -56,4 +71,5 @@ public class MyLinkedList<K> {
         myNodes.append(tempNode.getKey());
         System.out.println(myNodes);
     }
+
 }

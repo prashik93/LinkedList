@@ -7,6 +7,28 @@ public class Main {
         new Main().addMain();
         new Main().insertMain();
         new Main().popMain();
+        boolean search = new Main().searchMain();
+        System.out.println("Search result : " + search);
+    }
+
+    public boolean searchMain() {
+        System.out.println("\nAdding : ");
+        MyNode<Integer> myFirstNode = new MyNode<>();
+        myFirstNode.setKey(70);
+
+        MyNode<Integer> mySecondNode = new MyNode<>();
+        mySecondNode.setKey(30);
+
+        MyNode<Integer> myThirdNode = new MyNode<>();
+        myThirdNode.setKey(56);
+
+        integerMyLinkedList.add(myFirstNode);
+        integerMyLinkedList.add(mySecondNode);
+        integerMyLinkedList.add(myThirdNode);
+
+        integerMyLinkedList.printMyNodes();
+
+        return integerMyLinkedList.search(mySecondNode);
     }
 
     public void popMain() {
