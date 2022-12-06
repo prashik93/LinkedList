@@ -9,6 +9,32 @@ public class Main {
         new Main().popMain();
         new Main().searchMain();
         new Main().insertAfterGivenElementMain();
+        new Main().deleteSpecificElementMain();
+    }
+
+    public void deleteSpecificElementMain() {
+        System.out.println("\nSearch and delete");
+        MyNode<Integer> myFirstNode = new MyNode<>();
+        myFirstNode.setKey(70);
+
+        MyNode<Integer> mySecondNode = new MyNode<>();
+        mySecondNode.setKey(40);
+
+        MyNode<Integer> myThirdNode = new MyNode<>();
+        myThirdNode.setKey(30);
+
+        MyNode<Integer> myFourthNode = new MyNode<>();
+        myFourthNode.setKey(56);
+
+        integerMyLinkedList.add(myFirstNode);
+        integerMyLinkedList.add(mySecondNode);
+        integerMyLinkedList.add(myThirdNode);
+        integerMyLinkedList.add(myFourthNode);
+
+        INode<Integer> searchResult = integerMyLinkedList.search(40);
+        System.out.println("search result : " + searchResult);
+        integerMyLinkedList.remove(searchResult);
+        integerMyLinkedList.printMyNodes();
     }
 
     public void insertAfterGivenElementMain() {
@@ -29,7 +55,7 @@ public class Main {
         integerMyLinkedList.add(mySecondNode);
         integerMyLinkedList.add(myThirdNode);
 
-        INode<Integer> search = integerMyLinkedList.search(mySecondNode);
+        INode<Integer> search = integerMyLinkedList.search(mySecondNode.getKey());
 
         integerMyLinkedList.insert(search, myFourthNode);
         integerMyLinkedList.printMyNodes();
@@ -53,7 +79,7 @@ public class Main {
 
         integerMyLinkedList.printMyNodes();
 
-        return integerMyLinkedList.search(mySecondNode);
+        return integerMyLinkedList.search(30);
     }
 
     public void popMain() {
