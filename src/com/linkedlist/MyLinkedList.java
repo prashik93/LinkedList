@@ -8,6 +8,16 @@ public class MyLinkedList<K> {
 
     }
 
+    public INode<K> popLast() {
+        INode<K> tempNode = head;
+        while(!tempNode.getNext().equals(tail)) {
+            tempNode = tempNode.getNext();
+        }
+        this.tail = tempNode;
+        tempNode = tempNode.getNext();
+        return tempNode;
+    }
+
     public INode<K> pop() {
         INode<K> tempNode = this.head;
         this.head = head.getNext();
@@ -55,5 +65,13 @@ public class MyLinkedList<K> {
         }
         myNodes.append(tempNode.getKey());
         System.out.println(myNodes);
+    }
+
+    @Override
+    public String toString() {
+        return "MyLinkedList{" +
+                "head=" + head +
+                ", tail=" + tail +
+                '}';
     }
 }
